@@ -89,13 +89,13 @@ org.ekstep.contentrenderer.baseLauncher.extend({
             var regex = new RegExp("^(http|https)://", "i");
             if(!regex.test(globalConfigObj.basepath)){
                 var prefix_url = globalConfigObj.basepath || '';
-                path = prefix_url + "/" + data.artifactUrl + "?" + new Date().getSeconds();
+                path = prefix_url + "/" + data.artifactUrl;// + "?" + new Date().getSeconds();
                 context.optionalData = { "artifactUrl": path };
             }else
                 path = data.streamingUrl;
                 context.optionalData = { "streamingUrl": path };
         } else {
-            path = data.artifactUrl + "?" + new Date().getSeconds();
+            path = data.artifactUrl;// + "?" + new Date().getSeconds();
             context.optionalData = { "artifactUrl": path };
         }
         
